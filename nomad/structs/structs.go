@@ -7148,7 +7148,7 @@ const (
 // Allocation is used to allocate the placement of a task group to a node.
 type Allocation struct {
 	// msgpack omit empty fields during serialization
-	_struct bool `codec:",omitempty"`
+	_struct bool `codec:",omitempty"` // nolint: structcheck
 
 	// ID of the allocation (UUID)
 	ID string
@@ -8015,7 +8015,7 @@ const (
 // of the world does not require it.
 type Evaluation struct {
 	// msgpack omit empty fields during serialization
-	_struct bool `codec:",omitempty"`
+	_struct bool `codec:",omitempty"` // nolint: structcheck
 
 	// ID is a randomly generated UUID used for this evaluation. This
 	// is assigned upon the creation of the evaluation.
@@ -8286,7 +8286,7 @@ func (e *Evaluation) CreateFailedFollowUpEval(wait time.Duration) *Evaluation {
 // not been overcommitted before admitting the plan.
 type Plan struct {
 	// msgpack omit empty fields during serialization
-	_struct bool `codec:",omitempty"`
+	_struct bool `codec:",omitempty"` // nolint: structcheck
 
 	// EvalID is the evaluation ID this plan is associated with
 	EvalID string
