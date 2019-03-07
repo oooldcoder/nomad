@@ -2845,7 +2845,7 @@ func TestTaskArtifact_Validate_Checksum(t *testing.T) {
 func TestPlan_NormalizeAllocationsWhenNormalizeAllocsIsTrue(t *testing.T) {
 	t.Parallel()
 	plan := &Plan{
-		NodeUpdate: make(map[string][]*Allocation),
+		NodeUpdate:      make(map[string][]*Allocation),
 		NodePreemptions: make(map[string][]*Allocation),
 	}
 	plan.NormalizeAllocs = true
@@ -2876,7 +2876,7 @@ func TestPlan_NormalizeAllocationsWhenNormalizeAllocsIsTrue(t *testing.T) {
 func TestPlan_NormalizeAllocationsWhenNormalizeAllocsIsFalse(t *testing.T) {
 	t.Parallel()
 	plan := &Plan{
-		NodeUpdate: make(map[string][]*Allocation),
+		NodeUpdate:      make(map[string][]*Allocation),
 		NodePreemptions: make(map[string][]*Allocation),
 	}
 	plan.NormalizeAllocs = false
