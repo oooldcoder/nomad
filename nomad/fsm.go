@@ -1427,8 +1427,7 @@ func (n *nomadFSM) reconcileQueuedAllocations(index uint64) error {
 		}
 		snap.UpsertEvals(100, []*structs.Evaluation{eval})
 		// Create the scheduler and run it
-		allowPlanOptimization := ServersMeetMinimumVersion(n.server.Members(), MinVersionPlanNormalization, true)
-		sched, err := scheduler.NewScheduler(eval.Type, n.logger, snap, planner, allowPlanOptimization)
+		sched, err := scheduler.NewScheduler(eval.Type, n.logger, snap, planner)
 		if err != nil {
 			return err
 		}
